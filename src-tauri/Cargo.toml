@@ -1,0 +1,33 @@
+[package]
+name = "claude-dynamic-meteor"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon"] }
+tauri-plugin-shell = "2"
+tauri-plugin-autostart = "2"
+axum = "0.7"
+reqwest = { version = "0.12", features = ["stream", "json"] }
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tower = "0.4"
+tower-http = { version = "0.5", features = ["cors"] }
+tokio-stream = "0.1"
+futures = "0.3"
+uuid = { version = "1", features = ["v4"] }
+async-trait = "0.1"
+rusqlite = { version = "0.31", features = ["bundled"] }
+dirs = "5"
+aes-gcm = "0.10"
+base64 = "0.22"
+bytes = "1"
+regex = "1"
+chrono = "0.4"
+tracing = "0.1"
+tracing-subscriber = "0.3"
+keyring = "3"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }

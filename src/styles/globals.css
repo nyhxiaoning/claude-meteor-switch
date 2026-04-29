@@ -1,0 +1,225 @@
+@import url("tw-animate-css");
+@import url("shadcn/tailwind.css");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 153 100% 43%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 47% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 98%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 153 100% 43%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 153 100% 43%;
+    --radius: 0rem;
+    --chart-1: 153 100% 43%;
+    --chart-2: 217 91% 60%;
+    --chart-3: 47 95% 53%;
+    --chart-4: 270 67% 65%;
+    --chart-5: 199 89% 48%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family:
+      system-ui,
+      -apple-system,
+      sans-serif;
+    scrollbar-width: none;
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    min-height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: rgba(0, 220, 130, 0.15);
+    color: #0f172a;
+  }
+}
+
+@layer components {
+  .signal-panel {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+  }
+
+  .panel-header-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .hover-lift {
+    transition: all 0.2s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  .scanline {
+    position: relative;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.3s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer utilities {
+  .font-mono {
+    font-family:
+      ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;
+  }
+
+  .line-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    transition: all 0.15s ease;
+  }
+
+  .line-card:hover {
+    border-color: #00dc82;
+  }
+
+  .text-gradient-nuxt {
+    background: linear-gradient(135deg, #00dc82 0%, #00b870 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .status-dot {
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+      box-shadow: 0 0 0 0 rgba(0, 220, 130, 0.3);
+    }
+    50% {
+      opacity: 0.6;
+      box-shadow: 0 0 0 6px rgba(0, 220, 130, 0);
+    }
+  }
+
+  .line-btn {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    color: #0f172a;
+    transition: all 0.15s ease;
+    font-weight: 500;
+  }
+
+  .line-btn:hover {
+    background: #00dc82;
+    border-color: #00dc82;
+    color: #0f172a;
+  }
+
+  .line-btn-primary {
+    background: #00dc82;
+    border: 1px solid #00dc82;
+    color: #0f172a;
+    transition: all 0.15s ease;
+    font-weight: 500;
+  }
+
+  .line-btn-primary:hover {
+    background: #00b870;
+    border-color: #00b870;
+  }
+
+  .line-btn-danger {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    color: #ef4444;
+    transition: all 0.15s ease;
+    font-weight: 500;
+  }
+
+  .line-btn-danger:hover {
+    background: #ef4444;
+    border-color: #ef4444;
+    color: #ffffff;
+  }
+
+  .line-input {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    transition: all 0.15s ease;
+  }
+
+  .line-input:focus {
+    outline: none;
+    border-color: #00dc82;
+    box-shadow: 0 0 0 2px rgba(0, 220, 130, 0.1);
+  }
+
+  .line-divider {
+    background: #e5e7eb;
+    height: 1px;
+  }
+
+  .nav-pill {
+    transition: all 0.15s ease;
+  }
+
+  .nav-pill-active {
+    background: #00dc82;
+    color: #0f172a;
+  }
+}
