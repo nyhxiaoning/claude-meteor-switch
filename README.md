@@ -1,4 +1,5 @@
 # Claude Dynamic Meteor
+- 打包配置githubaction，参考之前一个项目：[textgithubaction](https://github.com/nyhxiaoning/tauri-solid-ts-tailwind-vite-githubaction)
 
 本地代理网关，让 Claude Code 通过 `/model opus|sonnet|haiku` 动态路由到不同 LLM 厂商。
 
