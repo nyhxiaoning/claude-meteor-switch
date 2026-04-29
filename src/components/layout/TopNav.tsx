@@ -31,6 +31,16 @@ const navItems = [
   { to: "/settings", label: "设置", icon: Settings },
 ];
 
+function LogoMark({ className = "" }: { className?: string }) {
+  return (
+    <img
+      src="/favicon.png"
+      alt="Meteor"
+      className={`h-12 w-12 flex-shrink-0 rounded-lg object-contain ${className}`}
+    />
+  );
+}
+
 const formatMetric = (value: number | undefined, suffix = "") => {
   if (value === undefined || Number.isNaN(value)) return "--";
   return `${new Intl.NumberFormat("zh-CN", { notation: "compact" }).format(value)}${suffix}`;
@@ -116,9 +126,7 @@ export function TopNav() {
     <>
       <aside className="fixed inset-y-0 left-0 z-50 hidden w-[72px] flex-col border-y border-r border-slate-200 bg-white/95 backdrop-blur-xl lg:flex">
         <div className="flex h-[73px] items-center justify-center border-b border-slate-200">
-          <div className="flex h-9 w-9 items-center justify-center rounded-md bg-slate-950 text-sm font-black text-white">
-            M
-          </div>
+          <LogoMark />
         </div>
 
         <nav className="flex flex-1 flex-col items-stretch">
@@ -155,9 +163,7 @@ export function TopNav() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="grid min-h-[72px] grid-cols-[minmax(0,1fr)_auto] items-stretch lg:grid-cols-[220px_minmax(0,1fr)_280px] xl:grid-cols-[260px_minmax(0,1fr)_280px]">
             <div className="flex min-w-0 items-center gap-3 border-r border-slate-200 pr-4 sm:pr-6">
-              <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-md bg-slate-950 text-sm font-black text-white lg:hidden">
-                M
-              </div>
+              <LogoMark className="lg:hidden" />
               <div className="min-w-0">
                 <div className="truncate text-base font-bold tracking-normal text-slate-950">
                   METEOR
