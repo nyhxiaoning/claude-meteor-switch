@@ -2,6 +2,13 @@
 
 本地代理网关，让 Claude Code 通过 `/model opus|sonnet|haiku` 动态路由到不同 LLM 厂商。
 
+![image-setting](./public/image-dashboard.png)
+![image-setting](./public/image-llm.png)
+![image-setting](./public/image-log.png)
+![image-setting](./public/image-setting.png)
+
+<br />
+
 ## 🎯 核心功能
 
 - **动态模型路由**：根据模型名关键词自动路由到不同厂商
@@ -38,6 +45,7 @@ pnpm tauri build
 ### 1. 启动应用
 
 运行应用后，在右上角点击「启动代理」按钮：
+
 - 代理服务器默认监听 `http://127.0.0.1:9876`
 - 同时自动配置 Claude Code 使用此代理
 
@@ -66,6 +74,7 @@ pnpm tauri build
 ### 4. 关闭代理
 
 点击右上角「停止代理」按钮：
+
 - 停止代理服务器
 - 自动还原 Claude Code 的原始配置
 
@@ -107,7 +116,7 @@ pnpm tauri build
 - ✅ Anthropic 格式直通（旁路 usage 提取）
 - ✅ OpenAI 格式双向转换
 - ✅ 模型路由匹配（含单元测试）
-- ✅ SQLite 持久化（providers/request_logs/daily_stats）
+- ✅ SQLite 持久化（providers/request\_logs/daily\_stats）
 - ✅ 完整的前端页面（Dashboard/Providers/Logs/Settings）
 - ✅ recharts 图表（趋势图 + 分布图）
 - ✅ Toast 通知
