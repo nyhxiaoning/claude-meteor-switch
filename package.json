@@ -1,6 +1,6 @@
 {
   "name": "claude-dynamic-meteor",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "description": "本地代理网关，让 Claude Code 通过 `/model opus|sonnet|haiku` 动态路由到不同 LLM 厂商",
   "license": "MIT",
   "repository": {
